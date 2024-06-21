@@ -18,12 +18,13 @@ export async function POST(request: NextRequest) {
     redirected: true,
     url: baseURL,
   });
-  // const response = NextResponse.redirect(
-  //   new URL("http://localhost:3000", request.url)
-  // );
-
+  const response = NextResponse.redirect(new URL("/", baseURL));
   response.cookies.set("token", authorization, { httpOnly: true, path: "/" });
 
   return response;
+
+  // response.cookies.set("token", authorization, { httpOnly: true, path: "/" });
+
+  // return response;
   // return NextResponse.json({ message: `${authorization}` }, { status: 200 });
 }
