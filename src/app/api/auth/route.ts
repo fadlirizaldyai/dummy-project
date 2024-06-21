@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     redirected: true,
     url: baseURL,
   });
-  response.cookies.set("token", authorization, { httpOnly: true, path: "/" });
+  response.cookies.set("token", authorization, { httpOnly: false, path: "/" });
 
   return response;
 }

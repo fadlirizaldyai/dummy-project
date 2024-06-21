@@ -15,6 +15,7 @@ import {
 import HeaderSection from "@/components/Header";
 import FooterMenu from "@/components/FooterMenu";
 import HomeCarousel from "@/components/Carousel/Carousel";
+import { cookies } from 'next/headers'
 
 const Menus = [
   { icon: <PersonalInfomartionIcon />, label: "Personal Information" },
@@ -33,6 +34,11 @@ const slides = [
 ];
 
 export default function Home() {
+  const cookieStore = cookies()
+  const token = cookieStore.get('token')
+
+  console.log('TOKEN:', token)
+
   return (
     <main className="w-full pb-16 relative">
       <HeaderSection />
@@ -40,6 +46,8 @@ export default function Home() {
       <div>
         <HomeCarousel options={OPTIONS} slides={slides} />
       </div>
+
+      <h2>TOKEN:{token}</h2>
 
       <section className="py-4 px-5">
         <div className="mb-6 flex gap-2">
