@@ -8,8 +8,8 @@ const allowedOrigins = [
 export function middleware(req: NextRequest) {
   const origin = req.headers.get("origin");
   let response = NextResponse.next();
-  
-  response.headers.set("Access-Control-Allow-Origin", origin);
+
+  response.headers.set("Access-Control-Allow-Origin", origin!);
 
   // if (origin && allowedOrigins.some((pattern) => pattern.test(origin))) {
   //   response.headers.set("Access-Control-Allow-Origin", origin);
