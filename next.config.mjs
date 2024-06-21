@@ -13,7 +13,16 @@ const withPWA = withPWAInit({
   reloadOnOnline: true,
 });
 
-const nextConfig = {};
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://dummy-project-beryl.vercel.app/:path*',
+      },
+    ]
+  },
+};
 // async headers() {
 //   return [
 //     {
