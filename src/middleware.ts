@@ -10,7 +10,7 @@ export function middleware(req: NextRequest) {
   const origin = req.headers.get("origin");
   let response = NextResponse.next();
 
-  response.headers.set("Access-Control-Allow-Origin", "fadli");
+  response.headers.set("Access-Control-Allow-Origin", "*");
 
   // if (origin && allowedOrigins.some((pattern) => pattern.test(origin))) {
   //   response.headers.set("Access-Control-Allow-Origin", origin);
