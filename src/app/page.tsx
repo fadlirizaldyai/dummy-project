@@ -33,8 +33,6 @@ const slides = [
   "/img/thumbnail_image_2.png",
 ];
 
-return 
-
 export default function Home() {
   const cookieStore = cookies()
   // const token = cookieStore.get('token')
