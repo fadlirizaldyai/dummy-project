@@ -37,7 +37,7 @@ export default function Home() {
   const cookieStore = cookies()
   // const token = cookieStore.get('token')
 
-  const cookies = cookieStore.getAll().map((cookie) => (
+  const cookies2 = cookieStore.getAll().map((cookie) => (
     <div key={cookie.name}>
       <p>Name: {cookie.name}</p>
       <p>Value: {cookie.value}</p>
@@ -52,7 +52,7 @@ export default function Home() {
         <HomeCarousel options={OPTIONS} slides={slides} />
       </div>
 
-      <h2>TOKEN:{cookies}</h2>
+      <h2>TOKEN:{cookies2}</h2>
 
       <section className="py-4 px-5">
         <div className="mb-6 flex gap-2">
