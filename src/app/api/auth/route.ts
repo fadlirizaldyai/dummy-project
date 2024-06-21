@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
   // const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
   const baseURL = 'https://dummy-project-beryl.vercel.app/'
 
-  const response = NextResponse.redirect(new URL("/", baseURL));
+  const response = NextResponse.redirect(new URL("/", baseURL),{ status: 302 });
   response.cookies.set("token", authorization, { httpOnly: true, path: "/" });
 
   return response;
