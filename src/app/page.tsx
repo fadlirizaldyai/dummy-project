@@ -33,11 +33,18 @@ const slides = [
   "/img/thumbnail_image_2.png",
 ];
 
+return 
+
 export default function Home() {
   const cookieStore = cookies()
-  const token = cookieStore.get('token')
+  // const token = cookieStore.get('token')
 
-  console.log('TOKEN:', token)
+  const cookies = cookieStore.getAll().map((cookie) => (
+    <div key={cookie.name}>
+      <p>Name: {cookie.name}</p>
+      <p>Value: {cookie.value}</p>
+    </div>
+  ))
 
   return (
     <main className="w-full pb-16 relative">
@@ -47,7 +54,7 @@ export default function Home() {
         <HomeCarousel options={OPTIONS} slides={slides} />
       </div>
 
-      <h2>TOKEN:{token}</h2>
+      <h2>TOKEN:{cookies}</h2>
 
       <section className="py-4 px-5">
         <div className="mb-6 flex gap-2">
