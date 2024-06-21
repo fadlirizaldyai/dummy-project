@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const authorization = request.headers.get("authorization");
+  const authorization = request.headers.get("Authorization");
 
   if (!authorization) {
     return NextResponse.json(
@@ -11,7 +11,8 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  // const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const baseURL = 'https://dummy-project-beryl.vercel.app/'
 
   const response = NextResponse.json({
     redirected: true,
